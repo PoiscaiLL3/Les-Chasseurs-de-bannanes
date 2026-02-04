@@ -112,11 +112,7 @@
             <img
               src="img/fond-concours-en-cours.png"
               alt="Le concours"
-              class="concours__image"
-            />
-            <span class="image-caption">
-              généré par intelligence artificielle
-            </span>
+              class="concours__image"/>
           </div>
 
         </div>
@@ -169,11 +165,23 @@
         <!-- BLOC 2 : image à droite, texte à gauche -->
         <div class="concours-block voiture-block voiture-reverse">
         
-          <div class="image-wrapper">
-            <img src="img/notre-voiture/usinage-mal-cadré.jpg"
-                 class="voiture__image"
-                 alt="Fabrication de la voiture">
-            <span class="image-caption">photo du projet</span>
+          <div class="images-grid">
+            <div class="image-wrapper">
+              <img src="img/IMG_2463.jpeg" class="voiture__image" alt="IMG_2463">
+              <span class="image-caption">IMG_2463</span>
+            </div>
+            <div class="image-wrapper">
+              <img src="img/IMG_2465.jpeg" class="voiture__image" alt="IMG_2465">
+              <span class="image-caption">IMG_2465</span>
+            </div>
+            <div class="image-wrapper">
+              <img src="img/IMG_2466.jpeg" class="voiture__image" alt="IMG_2466">
+              <span class="image-caption">IMG_2466</span>
+            </div>
+            <div class="image-wrapper">
+              <img src="img/notre-voiture/usinage-mal-cadré.jpg" class="voiture__image" alt="Fabrication de la voiture">
+              <span class="image-caption">photo du projet</span>
+            </div>
           </div>
         
           <div class="ensemble-para-1-voiture">
@@ -339,19 +347,24 @@
         La gestion de projet consiste à faire l'inventaire de toute les tâches faites dans le projet et toutes les tâches restantes à exécuter pour ainsi déduire un pourcentage d'avancement du projet.
       </p>
 
+      <div class="project-progress">
+        <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+        </div>
+        <div class="progress-label">Avancement : <strong id="progress-percent">0%</strong></div>
+      </div>
+
       <div class="gestion-projet-table">
 
         <div class="gestion-projet-column">
           <h3>Tâches réalisées</h3>
           <p>
             <ul>
-              <li>Modélisation de la voiture</li>
-              <li>Fraisage et fabrication de la mousse pour la coque de la voiture </li>
-              <li>Moulage au thermoformage de la coque</li>
-              <li>Finir le site web</li>
-              <li>Faire la chaîne d'informations entre les différents composants de la voiture </li>
-              
-
+              <li data-weight="1">Modélisation de la voiture</li>
+              <li data-weight="1">Fraisage et fabrication de la mousse pour la coque de la voiture</li>
+              <li data-weight="1">Moulage au thermoformage de la coque</li>
+              <li data-weight="1">Finir le site web</li>
+              <li data-weight="1">Faire la chaîne d'informations entre les différents composants de la voiture</li>
             </ul>
           </p>
         </div>
@@ -360,16 +373,14 @@
           <h3>Reste à faire</h3>
           <p>
             <ul>
-              <li>Finaliser le stand </li>
-              <li>Désigner la carte électronique et la souder</li>
-              <li>Découpe laser du châssis</li>
-              <li>Impression des différentes pièces de la voiture en 3D</li>
-              <li>Finaliser les programmes pour les capteurs des roues avants et arrières de la voiture</li>
-              <li>Trouver plus de sponsors et créer des promotions pour les sponsors </li>
-              <li>Finir l'application à réaliser sur MIT app Inventor (pour les courbes du patiange ainsi que des tableaux)</li>
-              <li>Finir le poster A3 sur le stand présentant les choses réalisées dans la partie systèmes numériques du projet</li>
-
-
+              <li data-weight="1">Finaliser le stand</li>
+              <li data-weight="1">Désigner la carte électronique et la souder</li>
+              <li data-weight="1">Découpe laser du châssis</li>
+              <li data-weight="1">Impression des différentes pièces de la voiture en 3D</li>
+              <li data-weight="1">Finaliser les programmes pour les capteurs des roues avants et arrières de la voiture</li>
+              <li data-weight="1">Trouver plus de sponsors et créer des promotions pour les sponsors</li>
+              <li data-weight="1">Finir l'application à réaliser sur MIT app Inventor (pour les courbes du patiange ainsi que des tableaux)</li>
+              <li data-weight="1">Finir le poster A3 sur le stand présentant les choses réalisées dans la partie systèmes numériques du projet</li>
             </ul>
           </p>
         </div>
@@ -558,7 +569,28 @@
 
     <!--///////////////////////////////////////////////////////////// CONTACT /////////////////////////////////////////////////////////////-->
 
-    <section id="contact"><h2>Contact</h2>
+    <section id="contact">
+      <h2>Contact</h2>
+      <!-- modify this form HTML and place wherever you want your form -->
+      <form
+        action="https://formspree.io/f/xqelrwwr"
+        method="POST"
+      >
+        <label>
+          Nom et prénom:
+          <input type="text" name="name" placeholder="Prénom Nom" required>
+        </label>
+        <label>
+          Saisissez votre email:
+          <input type="email" name="email" required>
+        </label>
+        <label>
+          Saisissez votre message:
+          <textarea name="message"></textarea>
+        </label>
+        <!-- your other form fields go here -->
+        <button type="submit">Envoyer</button>
+      </form>
     </section>
 
   </main>

@@ -36,3 +36,36 @@ if (carouselPrev && carouselNext && carousel) {
     });
   });
 }
+
+/* Gestion de projet — calcul d'avancement basé sur points fixes */
+(function() {
+  function updateFixedProgress() {
+    const block = document.querySelector('.gestion-projet-block');
+    if (!block) return;
+    const doneItems = block.querySelectorAll('.gestion-projet-column:first-of-type ul li');
+    const allItems = block.querySelectorAll('.gestion-projet-column ul li');
+    let total = 0;
+    let done = 0;
+
+    allItems.forEach(li => {
+      const w = parseFloat(li.dataset.weight || '1');
+      total += isFinite(w) ? w : 0;
+    });
+
+    doneItems.forEach(li => {
+      const w = parseFloat(li.dataset.weight || '1');
+      done += isFinite(w) ? w : 0;
+    });
+
+    const percent = total === 0 ? 0 : Math.round((done / total) * 100);
+    const fill = document.getElementById('progress-fill');
+    const percentLabel = document.getElementById('progress-percent');
+    const progressBar = document.getElementById('progress-bar');
+    if (fill) fill.style.width = percent + '%';
+    if (percentLabel) percentLabel.textContent = percent + '%';
+    if (progressBar) progressBar.setAttribute('aria-valuenow', percent);
+  }
+
+  document.addEventListener('DOMContentLoaded', updateFixedProgress);
+})();
+
