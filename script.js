@@ -69,3 +69,16 @@ if (carouselPrev && carouselNext && carousel) {
   document.addEventListener('DOMContentLoaded', updateFixedProgress);
 })();
 
+/* Vider le formulaire de contact après soumission */
+(function() {
+  const contactForm = document.querySelector('#contact form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function() {
+      // Vider le formulaire après soumission
+      setTimeout(() => {
+        contactForm.reset();
+      }, 100);
+    });
+  }
+})();
+
