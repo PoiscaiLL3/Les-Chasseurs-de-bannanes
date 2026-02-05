@@ -73,11 +73,25 @@ if (carouselPrev && carouselNext && carousel) {
 (function() {
   const contactForm = document.querySelector('#contact form');
   if (contactForm) {
-    contactForm.addEventListener('submit', function() {
-      // Vider le formulaire après soumission
-      setTimeout(() => {
-        contactForm.reset();
-      }, 100);
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(contactForm);
+      
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          contactForm.reset();
+          alert('Message envoyé avec succès !');
+        }
+      }).catch(error => {
+        console.error('Erreur:', error);
+      });
     });
   }
 })();
