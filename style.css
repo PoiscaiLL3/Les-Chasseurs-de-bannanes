@@ -471,7 +471,7 @@ body {
 .images-grid .image-wrapper {
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* 3 images en portrait à gauche */
@@ -504,10 +504,10 @@ body {
 .voiture-reverse .images-grid .image-wrapper:nth-child(1) .voiture__image,
 .voiture-reverse .images-grid .image-wrapper:nth-child(2) .voiture__image,
 .voiture-reverse .images-grid .image-wrapper:nth-child(3) .voiture__image {
-  transform: rotate(90deg);
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  transform: rotate(90deg) !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
 }
 
 .images-grid .voiture__image {
@@ -614,15 +614,11 @@ body {
 
   .images-grid .image-wrapper:nth-child(1),
   .images-grid .image-wrapper:nth-child(2),
-  .images-grid .image-wrapper:nth-child(3) {
-    grid-column: 1;
-    height: 250px;
-  }
-
+  .images-grid .image-wrapper:nth-child(3),
   .images-grid .image-wrapper:nth-child(4) {
-    grid-column: 1;
-    grid-row: auto;
-    height: 350px;
+    grid-column: 1 !important;
+    grid-row: auto !important;
+    height: 280px !important;
   }
 }
 
@@ -921,7 +917,7 @@ body {
 
 /* Rogner Stand.jpg pour masquer la personne à gauche */
 .stand-realization-block .image-wrapper .stand__image {
-  object-position: 70% center;
+  object-position: 85% center !important;
 }
 
 /* TEXTE AU SURVOL */
