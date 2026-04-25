@@ -920,6 +920,11 @@ body {
   object-position: 85% center !important;
 }
 
+/* Pour le bloc Avril, centrer les images */
+.avril-images-grid .stand__image {
+  object-position: center !important;
+}
+
 /* TEXTE AU SURVOL */
 .image-caption {
   position: absolute;
