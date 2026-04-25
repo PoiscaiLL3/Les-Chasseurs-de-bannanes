@@ -920,10 +920,23 @@ body {
   object-position: 85% center !important;
 }
 
-/* Pour le bloc Avril, centrer les images */
+/* Pour le bloc Avril, même taille pour les trois images */
+.avril-images-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.avril-images-grid .image-wrapper {
+  min-height: 360px;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
 .avril-images-grid .stand__image {
   object-position: center !important;
-  object-fit: contain !important;
+  object-fit: cover !important;
+  border-radius: 24px;
 }
 
 /* TEXTE AU SURVOL */
