@@ -923,20 +923,24 @@ body {
 /* Pour le bloc Avril, même taille pour les trois images */
 .avril-images-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
+  align-items: stretch;
 }
 
 .avril-images-grid .image-wrapper {
-  min-height: 360px;
-  aspect-ratio: 4 / 5;
+  height: 420px;
+  min-height: 420px;
+  border-radius: 24px;
   overflow: hidden;
 }
 
 .avril-images-grid .stand__image {
+  width: 100%;
+  height: 100%;
   object-position: center !important;
   object-fit: cover !important;
-  border-radius: 24px;
+  display: block;
 }
 
 /* TEXTE AU SURVOL */
