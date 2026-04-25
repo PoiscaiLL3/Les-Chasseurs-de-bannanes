@@ -923,6 +923,7 @@ body {
 /* Pour le bloc Avril, centrer les images */
 .avril-images-grid .stand__image {
   object-position: center !important;
+  object-fit: contain !important;
 }
 
 /* TEXTE AU SURVOL */
