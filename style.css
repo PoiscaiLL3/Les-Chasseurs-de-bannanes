@@ -947,14 +947,13 @@ body {
 .fevrier-mars-images-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-template-rows: repeat(2, 1fr);
   gap: 20px;
-  align-items: stretch;
+  align-items: start;
+  grid-auto-rows: minmax(180px, auto);
 }
 
 .fevrier-mars-images-grid .image-wrapper {
-  height: 200px;
-  min-height: 200px;
+  min-height: 180px;
   border-radius: 24px;
   overflow: hidden;
 }
